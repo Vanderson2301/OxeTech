@@ -7,63 +7,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Portifólio</title>
-    </head>
-    <body>
-        <header>
-            <nav class="flex justify-between items-center px-8 py-5 shadow-md bg-white">
-
-                <h1 class="text-2xl font-bold text-[#416fb5]">
-                    Vanderson Caetano
-                </h1>
-                
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
-                    <a href="#" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
-                    <a href="#" class="hover:text-blue-500 transition-colors">Projetos</a>
-                    <a href="#" class="hover:text-blue-500 transition-colors">Contato</a>
-                </div>
-           
-            </nav>
+    
+    <style>
+ 
+     html {
         
-            <section class="flex justify-between items-center px-20 py-16">
-                    <div class="max-w-xl">
-                        <h1 class="text-4xl font-bold text-gray-800 mb-4">
-                            Olá, eu sou <span class="text-[#416fb5]">Vanderson Caetano</span>
-                        </h1>
-                        
-                        <p class="text-xl text-gray-600 mb-6">
-                            Desenvolvedor Web apaixonado por tecnologia, interfaces modernas e desenvolvimento Full-Stack.
+        scroll-behavior: smooth;
+     }
+    </style>
+</head>
 
-                        </p>
+<body class="bg-white text-black">
+
+    <header class="min-h-screen bg-gradient-to-b from-white to-blue-50 overflow-hidden relative">
+
+        <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
+
+        <nav class="flex justify-between items-center px-8 py-5 shadow-md bg-white relative z-10">
+
+            <h1 class="text-2xl font-bold text-[#416fb5]">
+                    Vanderson Caetano
+            </h1>
+                
+            <div class="flex gap-6 font-medium">
+                <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
+                <a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
+                <a href="#projetos" class="hover:text-blue-500 transition-colors">Projetos</a>
+                <a href="#contato" class="hover:text-blue-500 transition-colors">Contato</a>
+            </div>
+           
+        </nav>
+        
+        <section class="flex justify-between items-center px-20 py-16">
+            
+            <div class="max-w-xl">
+
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+                    Olá, eu sou <span class="text-[#416fb5]">Vanderson Caetano</span>
+                </h1>
                         
-                        <button class="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:scale-105">
-                            Curriculo ou Contato, ainda to pensando
-                        </button>
+                <p class="text-xl text-gray-600 mb-8 leading-8">
+                    Desenvolvedor Web apaixonado por tecnologia, interfaces modernas e desenvolvimento Full-Stack.
+                </p>
                         
-                        <div class="flex gap-5 mt-8 text-2xl text-gray-700">
-                            <a href="https://github.com/" target="_blank"
-                               class="hover:text-black transition-colors">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/" target="_blank"
-                               class="hover:text-blue-700 transition-colors">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href="https://instagram.com/" target="_blank"
-                               class="hover:text-pink-500 transition-colors">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
+                <button class="bg-[#416fb5] text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:scale-105">
+                    Contato
+                </button>
+                        
+                <div class="flex gap-5 mt-8 text-2xl text-gray-700">
+                    <a href="https://github.com/" target="_blank" class="hover:text-black hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://linkedin.com/" target="_blank" class="hover:text-blue-700 transition-colors">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                            
+                    <a href="https://instagram.com/" target="_blank" class="hover:text-pink-500 transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
                     
-                    <div>
-                        <img src="Vanderson.jpeg" alt="Foto de Vanderson Caetano" class="w-80 rounded-full border-8 border-[#416fb5] shadow-xl">
-                    </div>
+            <div class="relative">
+                <img src="Vanderson.jpeg" alt="Foto de Vanderson Caetano" class="w-80 md:w-96 rounded-full border-8 border-[#416fb5] shadow-2xl relative z-10 hover:scale-105 transition-all duration-500">
+            </div>
    
-            </section>
-        </header>
+         </section>
+    </header>
 
-    <body>
+
         <div>
             <div class="bg-blue-100 p-4 rounded-lg shadow-md">
                 <section>
@@ -74,13 +89,14 @@
                 <section>
                     <h2>Habilidades</h2>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
                         <li>JavaScript</li>
-                        <li>TypeScript</li>
                         <li>TailwindCSS</li>
                         <li>NodeJS</li>
                         <li>Express</li>
+                        <li>ReactJS</li>
+                        <li>Python</li>
                     </ul>
                 </section>
             </div>
@@ -109,5 +125,4 @@
             <footer style="text-align: center; padding-top: 1px;">
                 <p>Copyright © 2026 <strong><a href="#"; style>Vanderson Caetano</a></strong>. Todos os direitos reservados.</p>
     </footer>
-</body>
 </html>
