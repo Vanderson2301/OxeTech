@@ -1,59 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Portifólio</title>
-</head>
-<body>
-    
-    <header>
-       <span>
-           <h1>Vanderson Caetano</h1>
-       </span>
-       <span><img src="#" alt="Foto de perfil"></span>
-       <br/>
-        <nav>
-            <a href="#">Home</a> 
-            <a href="#">Sobre Mim</a>
-            <a href="#">Skills</a>
-            <a href="#">Projetos</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
-    <br/>
+    </head>
+    <body>
+        <header>
+            <nav class="flex justify-between items-center px-8 py-5 shadow-md bg-white">
+
+                <h1 class="text-2xl font-bold text-[#416fb5]">
+                    Vanderson Caetano
+                </h1>
+                
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
+                    <a href="#" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
+                    <a href="#" class="hover:text-blue-500 transition-colors">Projetos</a>
+                    <a href="#" class="hover:text-blue-500 transition-colors">Contato</a>
+                </div>
+           
+            </nav>
+        
+            <section class="flex justify-between items-center px-20 py-16">
+                    <div class="max-w-xl">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                            Olá, eu sou <span class="text-[#416fb5]">Vanderson Caetano</span>
+                        </h1>
+                        
+                        <p class="text-xl text-gray-600 mb-6">
+                            Desenvolvedor Web apaixonado por tecnologia, interfaces modernas e desenvolvimento Full-Stack.
+
+                        </p>
+                        
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-all duration-300 shadow-md hover:scale-105">
+                            Curriculo ou Contato, ainda to pensando
+                        </button>
+                        
+                        <div class="flex gap-5 mt-8 text-2xl text-gray-700">
+                            <a href="https://github.com/" target="_blank"
+                               class="hover:text-black transition-colors">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/" target="_blank"
+                               class="hover:text-blue-700 transition-colors">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank"
+                               class="hover:text-pink-500 transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img src="Vanderson.jpeg" alt="Foto de Vanderson Caetano" class="w-80 rounded-full border-8 border-[#416fb5] shadow-xl">
+                    </div>
+   
+            </section>
+        </header>
 
     <body>
         <div>
-            <section>
-                <h2>Sobre mim</h2>
-                <p style="text-align: justify;">Sou Vanderson Caetano, formado em Letras – Língua Portuguesa pela Universidade Federal de Alagoas, discente do curso de Análise e Desenvolvimento de Sistemas pela Universidade Norte do Paraná e mestrando em Linguística pela UFAL/FALE.<br/>
-                Sou apaixonado por tecnologia, linguagem e desenvolvimento de sistemas. Tenho experiência com programação em JavaScript e Python, com foco em desenvolvimento web, especialmente em projetos utilizando ReactJS, voltados para interfaces modernas e funcionais.</p>
-            </section>
-            <section>
-                <h2>Skills</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>TailwindCSS</li>
-                    <li>NodeJS</li>
-                    <li>Express</li>
-
-                </ul>
-            </section>
+            <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+                <section>
+                    <h2>Sobre mim</h2>
+                    <p style="text-align: justify;">Sou Vanderson Caetano, formado em Letras – Língua Portuguesa pela Universidade Federal de Alagoas, discente do curso de Análise e Desenvolvimento de Sistemas pela Universidade Norte do Paraná e mestrando em Linguística pela UFAL/FALE.<br/>
+                    Sou apaixonado por tecnologia, linguagem e desenvolvimento de sistemas. Tenho experiência com programação em JavaScript e Python, com foco em desenvolvimento web, especialmente em projetos utilizando ReactJS, voltados para interfaces modernas e funcionais.</p>
+                </section>
+                <section>
+                    <h2>Habilidades</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>TailwindCSS</li>
+                        <li>NodeJS</li>
+                        <li>Express</li>
+                    </ul>
+                </section>
+            </div>
                 <section>
                     <h2>Projetos</h2>
                     <p>Aqui aparecerá alguns projetos que já produzi</p>
                 </section>
-                    <section>
+                    <section class="bg-blue-100 p-4 rounded-lg shadow-md">
                         <h2>Contato</h2>
                         <p>Só procurar na sua lista telefônica pelo homem mais lindo do mundo, será eu.</p>
-                    </section>
-                </div>
-                <section>
-                    <h2>Me mande uma mensagem</h2>
+                      
+                        <h2>Me mande uma mensagem</h2>
                     <form method="post">
                         <label for="name">Nome:</label><br>
                         <input type="text" id="name" name="name"><br>
@@ -64,6 +103,7 @@
                         <input type="submit" value="Enviar"> 
                     </form>
                 </section>
+            </div>
             </body>
             
             <footer style="text-align: center; padding-top: 1px;">
