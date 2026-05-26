@@ -29,16 +29,30 @@
                     Vanderson Caetano
             </h1>
                 
-            <div class="flex gap-6 font-medium">
+            <div class="hidden md:flex gap-6 font-medium">
                 <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
                 <a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
                 <a href="#projetos" class="hover:text-blue-500 transition-colors">Projetos</a>
                 <a href="#contato" class="hover:text-blue-500 transition-colors">Contato</a>
             </div>
            
+            <!--3 Barrinhas Mobile-->
+            <button id=" menuBtn" class="md:hidden texto-3xl text-[#416fb5]">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+           
         </nav>
-        
-        <section class="flex justify-between items-center px-20 py-16">
+
+        <div id="mobileMenu" class="hidden md:hidden flex-col gap-4 bg-white shadow-lg px-8 py-6 fontmedium relative z-20">
+
+            <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
+            <a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
+            <a href="#projetos" class="hover:text-blue-500 transition-colors">Projetos</a>
+            <a href="#contato" class="hover:text-blue-500 transition-colors">Contato</a>
+
+        </div>
+
+        <section class="flex flex-col md:flex-row justify-between items-center px-8 md:px-20 py-20 relative z-10 gap-16">
             
             <div class="max-w-xl">
 
@@ -59,11 +73,11 @@
                         <i class="fa-brands fa-github"></i>
                     </a>
 
-                    <a href="https://linkedin.com/" target="_blank" class="hover:text-blue-700 transition-colors">
+                    <a href="https://linkedin.com/" target="_blank" class="hover:text-blue-700 hover:scale-110 transition-all duration-300">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                             
-                    <a href="https://instagram.com/" target="_blank" class="hover:text-pink-500 transition-colors">
+                    <a href="https://instagram.com/" target="_blank" class="hover:text-pink-500 hover:scale-110 transition-all duration-300">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
@@ -72,39 +86,77 @@
             </div>
                     
             <div class="relative">
+                <div class="absolute inset-0 bg-[#416fb5] blur-3xl opacity-20 rounded-full"></div>
+
                 <img src="Vanderson.jpeg" alt="Foto de Vanderson Caetano" class="w-80 md:w-96 rounded-full border-8 border-[#416fb5] shadow-2xl relative z-10 hover:scale-105 transition-all duration-500">
             </div>
    
          </section>
     </header>
+        <section id="sobre" class="bg-gradient-to-b from-[#416fb5] to-[#5d87c9] py-28 px-8 relative overflow-hidden">
+            
+            <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
 
+            <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
 
-        <div>
-            <div class="bg-blue-100 p-4 rounded-lg shadow-md">
-                <section>
-                    <h2>Sobre mim</h2>
-                    <p style="text-align: justify;">Sou Vanderson Caetano, formado em Letras – Língua Portuguesa pela Universidade Federal de Alagoas, discente do curso de Análise e Desenvolvimento de Sistemas pela Universidade Norte do Paraná e mestrando em Linguística pela UFAL/FALE.<br/>
-                    Sou apaixonado por tecnologia, linguagem e desenvolvimento de sistemas. Tenho experiência com programação em JavaScript e Python, com foco em desenvolvimento web, especialmente em projetos utilizando ReactJS, voltados para interfaces modernas e funcionais.</p>
-                </section>
-                <section>
-                    <h2>Habilidades</h2>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>TailwindCSS</li>
-                        <li>NodeJS</li>
-                        <li>Express</li>
-                        <li>ReactJS</li>
-                        <li>Python</li>
-                    </ul>
-                </section>
+            <div class="max-w-6xl mx-auto bg-white/10 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-white/20 relative z-10">
+                
+                <div class="grid md:grid-cols-2 gap-12">
+
+                     <div>
+
+                        <h2 class="text-4xl font-bold text-white mb-6">Sobre mim</h2>
+                         <p class="text-gray-100 leading-8 text-justify">
+                            Sou Vanderson Caetano, formado em Letras – Língua Portuguesa pela Universidade Federal de Alagoas (UFAL), discente do curso de Análise e Desenvolvimento de Sistemas pela Universidade Norte do Paraná (UNOPAR) e mestrando em Linguística pela UFAL/FALE.
+                            <br/> </br>
+                            Sou apaixonado por tecnologia, linguagem e desenvolvimento de sistemas. Tenho experiência com programação em JavaScript e Python, com foco em desenvolvimento web, especialmente em projetos utilizando ReactJS, voltados para interfaces modernas e funcionais.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-4xl font-bold text-white md-6">Habilidades</h2>
+                    </br>
+                        <div class="flex flex-wrap gap-4">
+                            
+                            <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-md hover:scale-105 transition-all duration-300">
+                                <i class="fa-brands fa-html5 text-3xl text-orange-500"></i>
+                                <span class="font-semibold text-gray-700">HTML5</span>
+                            </div>
+
+                            <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-md hover:scale-105 transition-all duration-300">
+                                <i class="fa-brands fa-css3-alt text-3xl text-blue-500"></i>
+                                <span class="font-semibold text-gray-700">CSS3</span>
+                            </div>
+
+                             <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-md hover:scale-105 transition-all duration-300">
+                                <i class="fa-brands fa-js text-3xl text-yellow-400"></i>
+                                <span class="font-semibold text-gray-700">JavaScript</span>
+                            </div>
+
+                             <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-md hover:scale-105 transition-all duration-300">
+                                <i class="fa-brands fa-react text-3xl text-cyan-500"></i>
+                                <span class="font-semibold text-gray-700">ReactJS</span>
+                            </div>
+
+                             <div class="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-md hover:scale-105 transition-all duration-300">
+                                <i class="fa-brands fa-node-js text-3xl text-green-600"></i>
+                                <span class="font-semibold text-gray-700">NodeJS</span>
+                            </div>
+
+                </div>
+
             </div>
-                <section>
+
+        </section>    
+            
+        <section>
                     <h2>Projetos</h2>
                     <p>Aqui aparecerá alguns projetos que já produzi</p>
                 </section>
-                    <section class="bg-blue-100 p-4 rounded-lg shadow-md">
+                    
+                
+                
+        <section class="bg-blue-100 p-4 rounded-lg shadow-md">
                         <h2>Contato</h2>
                         <p>Só procurar na sua lista telefônica pelo homem mais lindo do mundo, será eu.</p>
                       
@@ -120,9 +172,11 @@
                     </form>
                 </section>
             </div>
-            </body>
+
             
-            <footer style="text-align: center; padding-top: 1px;">
-                <p>Copyright © 2026 <strong><a href="#"; style>Vanderson Caetano</a></strong>. Todos os direitos reservados.</p>
+    <footer class="bg-white border-t border-gray-200 py-8 text-center">
+                <p class="text-gray-600 text-lg">Copyright© 2026 <a href="#" class="font-bold text-[#416fb5] hover:text-blue-800 transition-colors duration-300">Vanderson Caetano</a>. Todos os direitos reservados.</p>
     </footer>
+</body>
+
 </html>
