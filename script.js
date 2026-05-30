@@ -28,7 +28,7 @@ menuBtn.addEventListener("click", () => {
     projetosContainer.innerHTML = "";
     lista.forEach(projeto => {
         projetosContainer.innerHTML += `
-            <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-lg mx-10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+            <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-lg mt-5 mx-10 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
             
             <img src="${projeto.imagem}" alt="${projeto.nome}" class="w-full h-auto object-cover">
             
