@@ -37,13 +37,13 @@
             </div>
            
             <!--3 Barrinhas Mobile-->
-            <button id=" menuBtn" class="md:hidden texto-3xl text-[#416fb5]">
+            <button id="menuBtn" class="md:hidden texto-3xl text-[#416fb5] cursor-pointer">
                 <i class="fa-solid fa-bars"></i>
             </button>
            
         </nav>
 
-        <div id="mobileMenu" class="hidden md:hidden flex-col gap-4 bg-white shadow-lg px-8 py-6 fontmedium relative z-20">
+        <div id="mobileMenu" class="hidden md:hidden flex-col gap-4 bg-white shadow-lg px-8 py-6 font-medium relative z-20">
 
             <a href="#" class="hover:text-blue-500 transition-colors">Home</a> 
             <a href="#sobre" class="hover:text-blue-500 transition-colors">Sobre Mim</a>
@@ -69,15 +69,15 @@
                 </button>
                         
                 <div class="flex gap-5 mt-8 text-2xl text-gray-700">
-                    <a href="https://github.com/" target="_blank" class="hover:text-black hover:scale-110 transition-all duration-300">
+                    <a href="https://github.com/vanderson2301" target="_blank" class="hover:text-black hover:scale-110 transition-all duration-300">
                         <i class="fa-brands fa-github"></i>
                     </a>
 
-                    <a href="https://linkedin.com/" target="_blank" class="hover:text-blue-700 hover:scale-110 transition-all duration-300">
+                    <a href="https://linkedin.com/in/vanderson-caetano-b2430324b/" target="_blank" class="hover:text-blue-700 hover:scale-110 transition-all duration-300">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                             
-                    <a href="https://instagram.com/" target="_blank" class="hover:text-pink-500 hover:scale-110 transition-all duration-300">
+                    <a href="https://www.instagram.com/vandersoncaetano_" target="_blank" class="hover:text-pink-500 hover:scale-110 transition-all duration-300">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
@@ -149,18 +149,28 @@
 
         </section>    
             
-        <section id>
-                    <h2>Projetos</h2>
-                    <p>Aqui aparecerá alguns projetos que já produzi</p>
-                </section>
-                    
+        <section id="projetos" class="bg-white py-24 px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-14">
+                    <h2 class="text-5xl font-bold mb-4">
+                        Projetos
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        Alguns projetos desenvolvidos por mim.
+                    </p>
+                </div>
                 
-                
+                <div id="projetosContainer" class="grid md:grid-cols-2 justify-items-center"></div>
+
+            </div>      
+        
+        </section>  
+            
         <section id="contato" class="bg-gradient-to-b from-[#416fb5] to-[#5d87c9] py-28 px-8 relative overflow-hidden">
             
             <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
 
-            <div class="absolute -bottom-0 -right-0 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
 
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
                         
@@ -202,6 +212,7 @@
     <footer class="bg-white border-t border-gray-200 py-8 text-center">
                 <p class="text-gray-600 text-lg">Copyright© 2026 <a href="#" class="font-bold text-[#416fb5] hover:text-blue-800 transition-colors duration-300">Vanderson Caetano</a>. Todos os direitos reservados.</p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
-
 </html>
