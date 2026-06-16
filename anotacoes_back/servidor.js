@@ -1,4 +1,6 @@
 //Ver depois essa questão com o Chat, não entendi muito bem;
+//Aqui se tem a ideia de servidor básico. Acho que entendi o básico.
+//Esse servidor ele é feito com JS, mas da pra simplificar com Express.
 import http from 'http';
 
 const server = http.createServer((req, res) => {

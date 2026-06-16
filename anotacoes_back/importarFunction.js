@@ -18,6 +18,8 @@ export { escrevaMeuNome, escrevaMeuSobrenome}
 //const {escrevaMeuNome} = require('./auxiliar');
 
 //Com o ES6, é possível usar a sintaxe de módulos nativa do JavaScript
-import { escrevaMeuNome, escrevaMeuSobrenome} from './auxiliar.js';
+import { escrevaMeuNome, escrevaMeuSobrenome} from '../auxiliar.js';
 escrevaMeuNome("Vanderson");
 escrevaMeuSobrenome("Silva");
+
+
