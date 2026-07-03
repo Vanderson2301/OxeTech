@@ -1,3 +1,5 @@
+//Jogar no GPT pra entender depois
+
 import express from 'express';
 import dotenv from 'dotenv';
 import fs from 'node:fs';
