@@ -1,28 +1,41 @@
-const express = require('express');
-const { messageCreateController, getMessagesController, getMessageByIndexController, readMessageController, deleteMessageController } = require('./controllers/messages.js')
+import dotenv from "dotenv";
+import postgres from 'postgres';
+import express from "express";
+import {
+  messageCreateController,
+  getMessagesController,
+  getMessageByIndexController,
+  readMessageController,
+  deleteMessageController,
+} from "./controllers/messages.js";
 
+dotenv.config();
+const PORT = process.env.PORT || 3000;
+
+const sql = postgres('postgres://postres:postgres@localhost/5432/db');
 const server = new express();
 
-server.use(express.json())
 
-server.get('/health', (req, res) => {
-    res.json({ status: "ok" })
-})
+server.use(express.json());
 
-server.get('/version', (req, res) => {
-    res.json({ version: "1.0.0" })
-})
+server.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
-server.post('/messages', messageCreateController)
+server.get("/version", (req, res) => {
+  res.json({ version: "1.0.0" });
+});
 
-server.get('/messages', getMessagesController)
+server.post("/messages", messageCreateController);
 
-server.get('/messages/:index', getMessageByIndexController)
+server.get("/messages", getMessagesController);
 
-server.patch('/messages/:index', readMessageController)
+server.get("/messages/:index", getMessageByIndexController);
 
-server.delete('/messages/:index', deleteMessageController)
+server.patch("/messages/:index", readMessageController);
 
-server.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000')
-})
+server.delete("/messages/:index", deleteMessageController);
+
+server.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
