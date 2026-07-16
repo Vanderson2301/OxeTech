@@ -1,32 +1,27 @@
-import postgres from "postgres";
+import {getMessages, saveMessage, getMessagesById, deleteMessageById} from "../repositories/messages.js";
 
 
-const messages = [];
-
-const sql = postgres("postgres://postgres:postgres@localhost:5432/db)", {max: 5});
-
-export function createMessage(data) {
-  messages.push({ ...data, readed: false });
-  sql `INSERT INTO messages ${sql(data)}`;
-  return messages.length - 1;
+export async function createMessage(data) {
+  const message = await saveMessage ({name: data.name, email: data.email, message: data.message});
+  return message.id
 }
 
-export function listMessages() {
-  return messages;
+export async function listMessages() {
+  const messages = await getMessages();
+  return messages
 }
 
-export function getMessageByIndex(index) {
-  return messages[index];
+export async function findMessage(id) {
+  return await getMessagesById(id)
 }
 
-export function readMessage(index) {
-  const message = messages[index];
-  message.readed = true;
-  messages[index] = message;
-  return message;
+export async function markMessageAsRead(id) {
+ const message = await getMessagesById(id);
+ message.read = true;
+ const updatedMessage = await saveMessage(message.name, message.email, message.message);
+ return updatedMessage
 }
 
-export function deleteMessage(index) {
-  messages.splice(index, 1);
-  return messages.length;
-}
+export async function excludeMessage(id){
+await deleteMessageById(id)
+};

@@ -1,14 +1,14 @@
 import {
   createMessage,
   listMessages,
-  getMessageByIndex,
-  readMessage,
-  deleteMessage,
+  findMessage,
+  markMessageAsRead,
+  excludeMessage,
 } from "../services/messages.js";
 
 const emailBlackList = ["vanderson@gmail.com"];
 
-export const messageCreateController = (req, res) => {
+export const messageCreateController = async (req, res) => {
   const data = req.body;
   if (!data) {
     throw new Error("Sem corpo na mensagem");
@@ -27,29 +27,29 @@ export const messageCreateController = (req, res) => {
     return;
   }
   try {
-    const finalIndex = createMessage(data);
-    res.json({ status: "ok", index: finalIndex });
+    const messageId = await createMessage(data);
+    res.json({ status: "ok", index: messageId });
   } catch (err) {
     res.status(400).send(err.message);
   }
 };
 
-export const getMessagesController = (req, res) => {
-  const messages = listMessages();
+export const getMessagesController = async (req, res) => {
+  const messages = await listMessages();
   res.json(messages);
 };
 
-export const getMessageByIndexController = (req, res) => {
-  const menssage = getMessageByIndex(req.params.index);
-  res.json(menssage);
+export const getMessagesByIdController = async (req, res) => {
+  const message = await findMessage(req.params.id);
+  res.json(message);
 };
 
-export const readMessageController = (req, res) => {
-  const updateMessage = readMessage(req.params.index);
-  res.json(updateMessage);
+export const markMessageAsReadController = async (req, res) => {
+  const updatedMessage = await markMessageAsRead(req.params.id);
+  res.json(updatedMessage);
 };
 
-export const deleteMessageController = (req, res) => {
-  const finalLength = deleteMessage(req.params.index);
-  res.json({ status: "ok", length: finalLength });
+export const deleteMessageController = async (req, res) => {
+  await excludeMessage(req.params.id);
+  res.json({ status: "ok" });
 };
