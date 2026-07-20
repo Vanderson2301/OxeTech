@@ -6,31 +6,30 @@ import {
   excludeMessage,
 } from "../services/messages.js";
 
+const postMessageControllerBody = z.object({
+  name: z.string(),
+  email: z.email(),
+  message: z.string(),
+
+})
+
 const emailBlackList = ["vanderson@gmail.com"];
 
 export const messageCreateController = async (req, res) => {
-  const data = req.body;
-  if (!data) {
-    throw new Error("Sem corpo na mensagem");
-    return;
-  }
-  if (!data.email || !data.message || !data.name) {
-    throw new Error("Campos obrigatórios não enviados!");
-    return;
-  }
+  try {
+  const data = postMessageControllerBody.parse(req.body);
   if (!data.email.includes("@")) {
     throw new Error("Email inválido");
     return;
   }
-  if (emailBlackList.includes(data.email)) {
-    throw new Error("Email não permitido");
-    return;
-  }
-  try {
     const messageId = await createMessage(data);
     res.json({ status: "ok", index: messageId });
-  } catch (err) {
-    res.status(400).send(err.message);
+  
+  }catch(err){
+    if (err.name == "ZodError") {
+      const message = JSON.parse(err.message)
+      res.status(400).send(`Erro de Validação:${message[0].message}`)
+      return
   }
 };
 
@@ -53,3 +52,4 @@ export const deleteMessageController = async (req, res) => {
   await excludeMessage(req.params.id);
   res.json({ status: "ok" });
 };
+}

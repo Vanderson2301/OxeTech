@@ -14,3 +14,7 @@ export async function getMessagesById(id){
 export async function deleteMessageById(id){
     return await sql `DELETE FROM messages WHERE id = ${id}`;
 }
+
+export async function updateMessage({id, name, email, message, read}){
+    return await sql `UPDATE messages SET name = ${name}, email = ${email}, message = ${message}, read = ${read} WHERE id = ${id} returning *`;
+}

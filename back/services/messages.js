@@ -1,4 +1,4 @@
-import {getMessages, saveMessage, getMessagesById, deleteMessageById} from "../repositories/messages.js";
+import {getMessages, saveMessage, getMessagesById, deleteMessageById, updateMessage} from "../repositories/messages.js";
 
 
 export async function createMessage(data) {
@@ -16,9 +16,18 @@ export async function findMessage(id) {
 }
 
 export async function markMessageAsRead(id) {
- const message = await getMessagesById(id);
+ const [message] = await getMessagesById(id);
+ if (!message) {
+        throw new Error("Mensagem não encontrada");
+    }
  message.read = true;
- const updatedMessage = await saveMessage(message.name, message.email, message.message);
+ const updatedMessage = await updateMessage({
+  id: message.id,
+  name: message.name,
+  email: message.email,
+  message: message.message,
+  read: message.read
+ });
  return updatedMessage
 }
 
