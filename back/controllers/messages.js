@@ -5,6 +5,7 @@ import {
   markMessageAsRead,
   excludeMessage,
 } from "../services/messages.js";
+import z from "zod";
 
 const postMessageControllerBody = z.object({
   name: z.string(),
@@ -23,15 +24,16 @@ export const messageCreateController = async (req, res) => {
     return;
   }
     const messageId = await createMessage(data);
-    res.json({ status: "ok", index: messageId });
+    res.json({ status: "ok", message: messageId });
   
   }catch(err){
     if (err.name == "ZodError") {
       const message = JSON.parse(err.message)
       res.status(400).send(`Erro de Validação:${message[0].message}`)
       return
-  }
-};
+      }
+  };
+}
 
 export const getMessagesController = async (req, res) => {
   const messages = await listMessages();
@@ -52,4 +54,4 @@ export const deleteMessageController = async (req, res) => {
   await excludeMessage(req.params.id);
   res.json({ status: "ok" });
 };
-}
+
